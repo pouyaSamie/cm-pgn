@@ -1,5 +1,6 @@
 # cm-pgn
 
+## this fork adds id to each move then you can find that move by unique id.
 ## Parser for PGNs (Portable Game Notation)
 
 This is as **ES6 Module for parsing and rendering of PGNs** ([Portable Game Notation](https://de.wikipedia.org/wiki/Portable_Game_Notation)).
@@ -127,4 +128,3 @@ To recreate the parser after modification of `src/grammar/pgn.pegjs`, run `bin/g
 
 - [Wikipedia Portable_Game_Notation](https://en.wikipedia.org/wiki/Portable_Game_Notation)
 - [Portable Game Notation Specification and Implementation Guide](http://www.saremba.de/chessgml/standards/pgn/pgn-complete.htm)
-
