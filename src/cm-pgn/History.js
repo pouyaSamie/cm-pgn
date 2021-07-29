@@ -1,5 +1,6 @@
 import {pgnParser} from "./parser/pgnParser.js"
 import {Chess} from "../../lib/chess.mjs/Chess.js"
+import { uid } from "uid"
 
 function IllegalMoveException(fen, notation) {
     this.fen = fen
@@ -62,6 +63,7 @@ export class History {
                             move.variations.push(this.traverse(parsedVariation, lastFen, previousMove, ply, sloppy))
                         }
                     }
+                    move.id = uid();
                     move.variation = moves
                     moves.push(move)
                     previousMove = move
@@ -129,6 +131,7 @@ export class History {
             }
         }
         const move = chess.move(notation, {sloppy: sloppy})
+        move.id = uid();
         if (!move) {
             throw new Error("invalid move")
         }
