@@ -131,10 +131,11 @@ export class History {
             }
         }
         const move = chess.move(notation, {sloppy: sloppy})
-        move.id = uid();
+        
         if (!move) {
             throw new Error("invalid move")
         }
+        move.id = uid();
         this.fillMoveFromChessState(move, chess)
         if (previous) {
             move.previous = previous
