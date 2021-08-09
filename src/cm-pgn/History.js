@@ -139,6 +139,7 @@ export class History {
         this.fillMoveFromChessState(move, chess)
         if (previous) {
             move.previous = previous
+            move.parrentId = previous.id
             move.ply = previous.ply + 1
             if (previous.next) {
                 previous.next.variations.push([])
